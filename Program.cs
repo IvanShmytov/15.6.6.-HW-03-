@@ -15,13 +15,17 @@ namespace FinalTask
                new Classroom { Students = {"Bulat", "Alex", "Galina"}, }
            };
             var allStudents = GetAllStudents(classes);
+            
 
             Console.WriteLine(string.Join(" ", allStudents));
         }
 
         static string[] GetAllStudents(Classroom[] classes)
         {
-            var result = classes.SelectMany(c => c.Students).ToArray();
+            //var result = classes.SelectMany(c => c.Students).ToArray();
+            var result = (from clas in classes
+                         from student in clas.Students
+                         select student).ToArray();
             return result;
         }
     }
