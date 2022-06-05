@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Task1
+namespace FinalTask
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
@@ -23,11 +23,6 @@ namespace Task1
         {
             var result = classes.SelectMany(c => c.Students).ToArray();
             return result;
-        }
-
-        public class Classroom
-        {
-            public List<string> Students = new List<string>();
         }
     }
 }
